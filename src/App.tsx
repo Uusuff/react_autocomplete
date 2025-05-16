@@ -12,7 +12,7 @@ export const App: React.FC = () => {
   const peoples = peopleFromServer;
 
   const filteredPeoples = useMemo(() => {
-    return peoples.filter((person) =>
+    return peoples.filter(person =>
       person.name.toLowerCase().includes(inputValue.toLowerCase()),
     );
   }, [peoples, inputValue]);
@@ -29,7 +29,6 @@ export const App: React.FC = () => {
             ? `${selectedPerson.name} (${selectedPerson.born} - ${selectedPerson.died})`
             : 'No selected person'}
         </h1>
-
 
         <div className="dropdown is-active">
           <div className="dropdown-trigger">
@@ -50,7 +49,12 @@ export const App: React.FC = () => {
 
         {filteredPeoples.length === 0 && (
           <div
-            className="notification is-danger is-light mt-3 is-align-self-flex-start"
+            className="
+              notification
+              is-danger
+              is-light
+              mt-3
+              is-align-self-flex-start"
             role="alert"
             data-cy="no-suggestions-message"
           >

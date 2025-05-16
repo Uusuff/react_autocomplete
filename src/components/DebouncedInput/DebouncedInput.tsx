@@ -20,7 +20,7 @@ export const DebouncedInput: React.FC<DebouncedInputProps> = React.memo(
         clearTimeout(handler);
       };
     }, [tempValue, delay, onChange]);
-    console.log('DebouncedInput');
+
     return (
       <input
         type="text"
@@ -28,9 +28,11 @@ export const DebouncedInput: React.FC<DebouncedInputProps> = React.memo(
         className="input"
         data-cy="search-input"
         value={tempValue}
-        onChange={(e) => setTempValue(e.target.value)}
+        onChange={e => setTempValue(e.target.value)}
         onFocus={onFocus}
       />
     );
   },
 );
+
+DebouncedInput.displayName = 'DebouncedInput';
