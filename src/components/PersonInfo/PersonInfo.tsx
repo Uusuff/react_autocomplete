@@ -7,7 +7,11 @@ interface Props {
   onClose: () => void;
 }
 
-export const PersonInfo: React.FC<Props> = ({ person, onSelected, onClose}) => {
+export const PersonInfo: React.FC<Props> = ({
+  person,
+  onSelected,
+  onClose,
+}) => {
   const handleClick = () => {
     onSelected(person);
     onClose();

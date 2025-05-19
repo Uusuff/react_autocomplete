@@ -16,8 +16,13 @@ export const PeopleList: React.FC<PeopleListProps> = ({
   return (
     <div className="dropdown-menu" role="menu" data-cy="suggestions-list">
       <div className="dropdown-content">
-        {peoples.map((person) => (
-          <PersonInfo person={person} key={person.name} onSelected={onSelected} onClose={onClose} />
+        {peoples.map(person => (
+          <PersonInfo
+            person={person}
+            key={person.slug}
+            onSelected={onSelected}
+            onClose={onClose}
+          />
         ))}
       </div>
     </div>
