@@ -5,17 +5,19 @@ import { PersonInfo } from '../PersonInfo/PersonInfo';
 interface PeopleListProps {
   peoples: Person[];
   onSelected: (person: Person) => void;
+  onClose: () => void;
 }
 
 export const PeopleList: React.FC<PeopleListProps> = ({
   peoples,
   onSelected,
+  onClose,
 }) => {
   return (
     <div className="dropdown-menu" role="menu" data-cy="suggestions-list">
       <div className="dropdown-content">
-        {peoples.map((person, index) => (
-          <PersonInfo person={person} key={index} onSelected={onSelected} />
+        {peoples.map((person) => (
+          <PersonInfo person={person} key={person.name} onSelected={onSelected} onClose={onClose} />
         ))}
       </div>
     </div>

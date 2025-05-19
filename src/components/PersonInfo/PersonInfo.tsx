@@ -4,11 +4,13 @@ import './PersonInfo.scss';
 interface Props {
   person: Person;
   onSelected: (person: Person) => void;
+  onClose: () => void;
 }
 
-export const PersonInfo: React.FC<Props> = ({ person, onSelected }) => {
+export const PersonInfo: React.FC<Props> = ({ person, onSelected, onClose}) => {
   const handleClick = () => {
     onSelected(person);
+    onClose();
   };
 
   return (

@@ -19,7 +19,7 @@ export const DebouncedInput: React.FC<DebouncedInputProps> = React.memo(
       return () => {
         clearTimeout(handler);
       };
-    }, [tempValue, delay, onChange]);
+    }, [tempValue, delay, onChange, value]);
 
     return (
       <input

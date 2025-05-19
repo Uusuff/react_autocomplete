@@ -43,6 +43,7 @@ export const App: React.FC = () => {
             <PeopleList
               peoples={filteredPeoples}
               onSelected={setSelectedPerson}
+              onClose={() => setIsOpen(false)}
             />
           )}
         </div>
